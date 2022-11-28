@@ -24,7 +24,7 @@ body {
   left: 50%;
 
   transform: translate(-50%, -50%);
-  transition: all 75ms linear;
+  transition: color 75ms linear;
   cursor: pointer;
 
   display: inline-block;
@@ -72,15 +72,30 @@ body {
     scale(1, 0.35);
   filter: blur(1em);
   opacity: 0.4;
-  transition: all 75ms linear;
+  transition: opacity 75ms linear;
+}
+
+.btn-neon.active::after {
+  content: '';
+  opacity: 0;
+  transition: opacity 75ms linear;
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  box-shadow: 0 0 2em 0.5em var(--neon-on);
+  background: var(--neon-on);
 }
 
 .btn-neon.active:hover {
-  background: var(--neon-on);
   color: var(--bg);
   text-shadow: none;
 }
 
 .btn-neon.active:hover::before {
   opacity: 0.8;
+}
+
+.btn-neon.active:hover::after {
+  opacity: 1;
 }
