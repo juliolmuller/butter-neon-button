@@ -11,8 +11,9 @@
 }
 
 body {
-  min-height: 100%;
-  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
   background: var(--bg);
 
   font-family: 'Patrick Hand', cursive;
@@ -23,9 +24,12 @@ body {
   top: 50%;
   left: 50%;
 
-  transform: translate(-50%, -50%);
-  transition: color 75ms linear;
   cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition:
+    color 75ms linear,
+    top 300ms ease-out,
+    left 300ms ease-out;
 
   display: inline-block;
   outline: none;
@@ -40,9 +44,11 @@ body {
   letter-spacing: 0.125em;
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.btn-neon:hover, .btn-neon.active {
+.btn-neon.active,
+.btn-neon:hover {
   box-shadow:
     inset 0 0 0.4em var(--neon-on),
     0 0 0.5em var(--neon-on);
@@ -54,7 +60,8 @@ body {
   color: var(--neon-on);
 }
 
-.btn-neon:hover::before, .btn-neon.active::before {
+.btn-neon.active::before,
+.btn-neon:hover::before  {
   content: '';
   pointer-events: none;
 
@@ -87,15 +94,18 @@ body {
   background: var(--neon-on);
 }
 
+.btn-neon.active:focus,
 .btn-neon.active:hover {
   color: var(--bg);
   text-shadow: none;
 }
 
+.btn-neon.active:focus::before,
 .btn-neon.active:hover::before {
   opacity: 0.8;
 }
 
+.btn-neon.active:focus::after,
 .btn-neon.active:hover::after {
   opacity: 1;
 }
