@@ -1,3 +1,7 @@
+// Pick random neon color
+const colors = ['blue', 'cyan', 'green', 'orange', 'pink', 'purple', 'red']
+const randomColor = colors[Math.floor(Math.random() * colors.length)]
+document.documentElement.style.setProperty('--neon-on', `var(--neon-${randomColor})`)
 
 // Append a button to the DOM
 const button = document.createElement('button')

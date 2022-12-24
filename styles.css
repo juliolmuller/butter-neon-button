@@ -1,6 +1,13 @@
 :root {
   --bg: #241820;
-  --neon-on: #ff14bd;
+  --neon-blue: #1f51ff;
+  --neon-cyan:  #0ff0fc;
+  --neon-green: #7fff00;
+  --neon-orange: #ff5e00;
+  --neon-pink: #ff14bd;
+  --neon-purple: #8a2be2;
+  --neon-red: #ff3131;
+  --neon-on: var(--neon-pink); /* randomly defined by JS */
   --neon-off: #34242f;
 }
 
